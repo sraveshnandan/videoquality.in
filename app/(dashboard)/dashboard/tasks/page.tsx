@@ -21,7 +21,7 @@ const TaskPage = () => {
   const [rawvideo, setrawvideo] = useState<File | null>(null);
   const [vidBlob, setvidBlob] = useState<string>("");
   const [prompt, setprompt] = useState<string>("");
-  const [editing_type, setediting_type] = useState<string>("");
+  const [editing_type, setediting_type] = useState<string>("Auto Inhance");
 
   const [loading, setloading] = useState<boolean>(false);
 
