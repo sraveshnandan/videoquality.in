@@ -85,7 +85,7 @@ const TaskDetailsPage = (props: Props) => {
         {task?.editing_type && (
           <span className="text-4xl flex flex-row items-center gap-2 mb-4 font-semibold text-white">
             Editing Type:{" "}
-            <span className="text-gray-500 text-xl">{task?.status}</span>
+            <span className="text-gray-500 text-xl">{task?.editing_type}</span>
           </span>
         )}
         {/* Video Section  */}

@@ -112,7 +112,7 @@ const TaskPage = () => {
             >
               Add task
             </span>
-            {profile.tasks.map((item: any, index: number) => (
+            {profile.tasks.reverse().map((item: any, index: number) => (
               // Task card
               <div
                 key={index}

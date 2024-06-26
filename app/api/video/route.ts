@@ -33,8 +33,6 @@ const handler = async (req: NextRequest) => {
         uploadStream.end(chunks);
       });
 
-      console.log("upload response", uploadResponse);
-
       if (uploadResponse.secure_url) {
         return NextResponse.json({
           success: true,
