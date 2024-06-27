@@ -52,7 +52,7 @@ const PricingSection = ({ pricingPage, cardData }: PricingProp) => {
               <span className="text-6xl  text-white my-2"> ₹{item.amount}</span>
             )}
             {item.benifits ? (
-              <div className="flex py-8 flex-col gap-1  flex-grow">
+              <div className="flex py-8 mb-4 flex-col gap-1  flex-grow">
                 {item.benifits.map((item, index) => (
                   <>
                     <span
@@ -93,7 +93,7 @@ const PricingSection = ({ pricingPage, cardData }: PricingProp) => {
                     return await cardData(item);
                   }
                 }}
-                className="bg-white text-black w-[80%] hover:bg-purple-500 hover:text-white font-semibold text-lg"
+                className="bg-white  text-black w-[80%] hover:bg-purple-500 hover:text-white font-semibold text-lg"
               >
                 Continue
               </Button>

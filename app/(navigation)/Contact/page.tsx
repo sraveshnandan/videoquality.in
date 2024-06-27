@@ -1,25 +1,34 @@
 "use client";
-import { revalidatePath } from "next/cache";
-import React, { FormEvent } from "react";
+import Loader from "@/components/shared/landing/Loader";
+import { deviceTokens } from "@/constants";
+import { sendNt } from "@/libs/actions";
+import { sendPushNotification } from "@/libs/firebase";
+import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 
 type Props = {};
 
 const Contact = (props: Props) => {
-  const handleSubmit = (ev: FormEvent<HTMLFormElement>) => {
+  const [loading, setloading] = useState(false);
+  const handleSubmit = async (ev: FormEvent<HTMLFormElement>) => {
     ev.preventDefault();
-
+    setloading(true);
     const name = ev.target[0].value;
     const email = ev.target[1].value;
-    const subject = ev.target[2].value;
+    const sub = ev.target[2].value;
     const message = ev.target[3].value;
 
-    toast.success("Your request sent successfully.");
-    setTimeout(() => {
-      window.location.reload();
-    }, 1500);
+    const title = "A new contact us form submitted.";
+    const body = `A new Contact us form submitted. Details : name: ${name}, subject: ${sub} email: ${email}, query: ${message}`;
+
+    const res = await sendNt(deviceTokens, title, body);
+    setloading(false);
+    toast.success("Your request sent.");
+    console.log(res);
   };
-  return (
+  return loading ? (
+    <Loader />
+  ) : (
     <div className="h-screen  text-white my-8 rounded-lg">
       <div className="pt-10 md:pt-20">
         <div className="p-4 md:p-8 flex items-center flex-col">

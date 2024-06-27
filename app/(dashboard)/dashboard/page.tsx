@@ -37,7 +37,7 @@ const Page = (props: Props) => {
   }, []);
 
   return (
-    <div className="flex items-start mx-w-[calc(100vw)] lg:p-4 overflow-y-auto overflow-x-hidden max-h-[calc(100vh-25px)] scroll-smooth sh flex-col gap-2 justify-start">
+    <div className="flex items-start mx-w-[calc(100vw)] scrh lg:p-4 overflow-y-auto overflow-x-hidden max-h-[calc(100vh-25px)] scroll-smooth sh flex-col gap-2 justify-start">
       {/* welcome section  */}
       <div className="rounded-md p-2 border shadow-lg shadow-black  w-full items-center flex justify-between">
         <span className="text-white text-lg">

@@ -83,22 +83,20 @@
 
 .ani {
   transition: all 5s;
-  animation: random 8s ease-in-out 0s infinite alternate-reverse ;
-  
+  animation: random 8s ease-in-out 0s infinite alternate-reverse;
 }
 
 @keyframes random {
- from{
-  opacity: 1;
-  transform: rotate(0deg);
-  border-radius: 12%;
-
-
- }to{
-  opacity: 0.2;
-  transform: rotate(320deg);
-  border-radius: 200px;
- }
+  from {
+    opacity: 1;
+    transform: rotate(0deg);
+    border-radius: 12%;
+  }
+  to {
+    opacity: 0.2;
+    transform: rotate(320deg);
+    border-radius: 200px;
+  }
 }
 
 .custom-shape {
@@ -145,7 +143,6 @@
   }
 }
 
-
-.sh{
-  scroll-margin: 0;
+.scrh::-webkit-scrollbar , body::-webkit-scrollbar {
+  display: none;
 }

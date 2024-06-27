@@ -5,6 +5,7 @@ import { Message, User } from "@/models";
 import { generateReferCode } from "@/utils";
 import { auth } from "@clerk/nextjs/server";
 import { Notification } from "@/models/notification.model";
+import { sendPushNotification } from "../firebase";
 
 // for syncing new user data
 const createUser = async (data: ICreateUserDataType) => {
@@ -144,6 +145,14 @@ const setFCMtoken = async (token: string) => {
     return;
   }
 };
+
+const sendNt = async (tokens: string[], title: string, body: string) => {
+  try {
+    await sendPushNotification(tokens, title, body);
+  } catch (error) {
+    return;
+  }
+};
 export {
   createUser,
   getUserProfile,
@@ -151,4 +160,5 @@ export {
   deleteUserAccount,
   verifyCode,
   setFCMtoken,
+  sendNt,
 };
