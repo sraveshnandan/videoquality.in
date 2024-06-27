@@ -23,16 +23,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={`max-w-7xl relative bg-black  mx-auto`}>
-        <div className="absolute top-0 lg:hidden flex right-0 w-fit h-fit bg-white  shadow-lg p-2 z-50 ">
+        <div className="absolute top-14 lg:hidden flex right-0 w-fit h-fit bg-white rounded-l-lg  shadow-lg p-2 z-50 ">
           <Sheet>
             <SheetTrigger>
               <Menu className="text-black font-semibold" />
             </SheetTrigger>
-
-            <SheetContent className="bg-glass pt- flex-col flex items-center justify-center max-w-full">
-              <SheetClose className="absolute top-2 left-2 border-2 rounded-full p-2">
-                <X className="text-white text-xl" />
-              </SheetClose>
+            <SheetContent className="bg-glass flex-col flex items-center justify-center max-w-full">
               <DashBoardMenu />
             </SheetContent>
           </Sheet>

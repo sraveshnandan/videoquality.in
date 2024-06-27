@@ -20,7 +20,7 @@ export default function RootLayout({
       <body className={`max-w-7xl bg-black-bg  mx-auto`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
@@ -29,7 +29,7 @@ export default function RootLayout({
         <Toaster
           richColors={true}
           closeButton={true}
-          theme="dark"
+          theme="light"
           position="top-center"
         />
       </body>

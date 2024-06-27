@@ -10,10 +10,6 @@ const NavMenu: INavMenu[] = [
     link: "/Features",
   },
   {
-    name: "About us",
-    link: "/About-us",
-  },
-  {
     name: "Pricing",
     link: "/Pricing",
   },

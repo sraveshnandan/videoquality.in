@@ -1,14 +1,10 @@
 "use client";
 import { VideoTypes } from "@/constants";
-import { firebaseApp } from "@/firebase";
-import { getUserProfile, setFCMtoken } from "@/libs/actions";
+import { getUserProfile } from "@/libs/actions";
 import { useStore } from "@/zustand/MainStore";
 import { UserButton } from "@clerk/nextjs";
-import { getMessaging, getToken } from "firebase/messaging";
-import { Copy } from "lucide-react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { toast } from "sonner";
 
 const FcmTokenComponent = dynamic(
