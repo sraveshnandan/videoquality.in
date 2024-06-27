@@ -22,6 +22,11 @@ export async function POST(req: Request) {
   const svix_timestamp = headerPayload.get("svix-timestamp");
   const svix_signature = headerPayload.get("svix-signature");
 
+  // Logging headers for debugging
+  console.log("svix-id:", svix_id);
+  console.log("svix-timestamp:", svix_timestamp);
+  console.log("svix-signature:", svix_signature);
+
   // If there are no headers, error out
   if (!svix_id || !svix_timestamp || !svix_signature) {
     return new Response("Error occurred -- no svix headers", {
@@ -30,7 +35,14 @@ export async function POST(req: Request) {
   }
 
   // Get the body
-  const payload = await req.json();
+  let payload;
+  try {
+    payload = await req.json();
+  } catch (err) {
+    console.error("Error parsing JSON payload:", err);
+    return new Response("Invalid JSON", { status: 400 });
+  }
+
   const body = JSON.stringify(payload);
 
   // Create a new Svix instance with your secret.
