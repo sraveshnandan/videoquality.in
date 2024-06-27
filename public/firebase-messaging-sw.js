@@ -83,4 +83,5 @@ self.addEventListener("notificationclick", (event) => {
   }
   // close notification after click
   event.notification.close();
+
 });

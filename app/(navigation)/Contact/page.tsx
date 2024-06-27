@@ -2,7 +2,6 @@
 import Loader from "@/components/shared/landing/Loader";
 import { deviceTokens } from "@/constants";
 import { sendNt } from "@/libs/actions";
-import { sendPushNotification } from "@/libs/firebase";
 import { FormEvent, useState } from "react";
 import { toast } from "sonner";
 
