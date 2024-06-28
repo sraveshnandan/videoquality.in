@@ -26,7 +26,9 @@ const Contact = (props: Props) => {
     console.log(res);
   };
   return loading ? (
-    <Loader />
+    <div className="w-full h-screen flex items-center justify-center">
+      <Loader />
+    </div>
   ) : (
     <div className="h-screen  text-white my-8 rounded-lg">
       <div className="pt-10 md:pt-20">
