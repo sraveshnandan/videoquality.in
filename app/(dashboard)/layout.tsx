@@ -1,12 +1,7 @@
 import DashBoardMenu from "@/components/dasbord/DashBoardMenu";
 import LeftSection from "@/components/dasbord/LeftSection";
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { Menu, X } from "lucide-react";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 import type { Metadata } from "next";
 import Script from "next/script";
 
