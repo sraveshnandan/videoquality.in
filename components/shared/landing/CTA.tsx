@@ -13,7 +13,7 @@ const CTA = () => {
     return router.push("/dashboard")
   };
   return (
-    <div className="bg-glass rounded-xl mb-8 dark:bg-gray-800 ">
+    <div className="bg-glass rounded-xl mb-8  mx-4 lg:mx-0 ">
       <div className="lg:flex lg:items-center lg:justify-between w-full mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 z-20">
         <h2 className="text-3xl font-extrabold text-pink-500 dark:text-white sm:text-4xl">
           <span className="block">Explore the world of Creativity.</span>

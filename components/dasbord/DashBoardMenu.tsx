@@ -6,6 +6,7 @@ import { loggedInUserMenu } from "@/constants";
 import { INavMenu } from "@/types";
 import { usePathname } from "next/navigation";
 import { useStore } from "@/zustand/MainStore";
+import Image from "next/image";
 
 const DashBoardMenu = () => {
   const path = usePathname();
@@ -14,14 +15,15 @@ const DashBoardMenu = () => {
   const inActiveClass = `text-white rounded-md gap-2  transition-all duration-400 hover:scale-110 p-2 hover:bg-glass my-2 flex flex-row items-center`;
   return (
     <aside
-      className={`bg-transparent backdrop-blur-sm z-50 absolute top-4 left-0 right-0  flex h-full flex-col mt-8  p-4 rounded-md  `}
+      className={`bg-transparent backdrop-blur-sm  absolute   left-0 right-0  flex h-full flex-col   p-4 rounded-md `}
     >
       {/* Logo  */}
       <Link
         className="text-white border-b-[0.5px] pb-3 border-b-gray-500 text-xl flex flex-row items-center gap-2"
         href={"/"}
       >
-        VideoQuality
+        <Image src={"/logo.png"} alt="logo" width={60} height={60} />
+        <span className="text-xl font-medium">VideoQuality</span>
       </Link>
 
       {/* menu links  */}
@@ -49,7 +51,7 @@ const DashBoardMenu = () => {
       <div className="flex flex-col mb-16  gap-2">
         <div className="bg-white p-2 flex flex-col rounded-md shadow-md">
           {/* user remaining credit  */}
-          <div className="flex flex-row  items-center gap-2">
+          <div className="flex flex-row text-black  items-center gap-2">
             <span>Credit:</span>
             <Coins className="text-yellow-500" />
             <span className="text-3xl font-semibold"> {u?.credit || 0}</span>

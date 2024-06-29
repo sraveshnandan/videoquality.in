@@ -108,7 +108,7 @@ const TaskPage = () => {
             {/* new task button  */}
             <span
               onClick={() => settaskstae(true)}
-              className="hover:text-white self-end  duration-300 transition-all px-5 py-2 rounded-md my-4 hover:bg-gradient-to-tr from-pink-500 to-indigo-500 hover:shadow-lg hover:shadow-pink-500 cursor-pointer bg-white"
+              className="hover:text-white self-end text-black  duration-300 transition-all px-5 py-2 rounded-md my-4 hover:bg-gradient-to-tr from-pink-500 to-indigo-500 hover:shadow-lg hover:shadow-pink-500 cursor-pointer bg-white"
             >
               Add task
             </span>

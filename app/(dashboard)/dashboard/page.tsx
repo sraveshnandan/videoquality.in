@@ -39,39 +39,39 @@ const Page = (props: Props) => {
   return (
     <div className="flex items-start mx-w-[calc(100vw)] scrh lg:p-4 overflow-y-auto overflow-x-hidden max-h-[calc(100vh-25px)] scroll-smooth sh flex-col gap-2 justify-start">
       {/* welcome section  */}
-      <div className="rounded-md p-2 border shadow-lg shadow-black  w-full items-center flex justify-between">
-        <span className="text-white text-lg">
-          {" "}
-          Welcome Mr. {profile?.first_name}{" "}
+      <div className="rounded-md p-2 fixed md:flex backdrop-blur-md bg-glass border shadow-lg shadow-black  w-full items-center flex gap-2">
+        <UserButton afterSignOutUrl="/" />
+        <span className="text-white font-medium">
+          Welcome back{" "}
+          <span className="text-purple-500 text-lg">{profile?.first_name}</span>
         </span>
-        <div>
-          <UserButton afterSignOutUrl="/" />
-        </div>
       </div>
 
       {/* Video type section  */}
 
-      {VideoTypes &&
-        VideoTypes.map((item, index) => (
-          <div key={index} className="flex  w-full lg:p-4 flex-col gap-4">
-            {/* type section  */}
-            <div className="flex items-center rounded-xl  flex-col gap-4 w-full justify-center border p-2">
-              {/* type heading  */}
-              <span className="bg-gradient-to-r from-pink-500  to-indigo-400 text-3xl  hover:border-b-4 hover:border-pink-500 inline-block text-center text-transparent bg-clip-text">
-                {item.name}
-              </span>
-              <video
-                autoPlay
-                loop
-                className="rounded-xl w-full"
-                src={item.url}
-              ></video>
-              {/* before video  */}
+      <div className="py-12">
+        {VideoTypes &&
+          VideoTypes.map((item, index) => (
+            <div key={index} className="flex  w-full lg:p-4 flex-col gap-4">
+              {/* type section  */}
+              <div className="flex items-center rounded-xl  flex-col gap-4 w-full justify-center border p-2">
+                {/* type heading  */}
+                <span className="bg-gradient-to-r from-pink-500  to-indigo-400 text-3xl  hover:border-b-4 hover:border-pink-500 inline-block text-center text-transparent bg-clip-text">
+                  {item.name}
+                </span>
+                <video
+                  autoPlay
+                  loop
+                  className="rounded-xl w-full"
+                  src={item.url}
+                ></video>
+                {/* before video  */}
 
-              {/* after video  */}
+                {/* after video  */}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+      </div>
     </div>
   );
 };

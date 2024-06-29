@@ -56,7 +56,7 @@ const LeftSection = () => {
       <div className="flex flex-col pb-8  gap-4">
         <div className="bg-white p-2 flex flex-row items-center justify-between rounded-md shadow-md">
           {/* user remaining credit  */}
-          <div className="flex flex-row  items-center gap-2">
+          <div className="flex flex-row text-black items-center gap-2">
             <span>Credit:</span>
             <Coins className="text-yellow-500" />
             <span className="text-3xl font-semibold">

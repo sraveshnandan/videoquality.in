@@ -23,6 +23,7 @@ const Header = () => {
       {/* logo  */}
       <Link href={`/`} className="flex flex-row items-center gap-2">
         <Image src={"/logo.png"} width={80} height={80} alt="logo" />
+        <span className="text-white text-xl font-medium">VideoQuality.in</span>
       </Link>
       {/* menu items  */}
       {/* desktop menu  */}

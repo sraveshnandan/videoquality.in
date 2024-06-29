@@ -9,7 +9,7 @@ const Home = async () => {
   const { userId } = auth();
   return (
     <>
-      <section className="min-h-screen">
+      <section className="max-w-full max-h-fit overflow-hidden">
         {/* hero section  */}
         <HeroSection userId={userId!} />
         {/* features section  */}
@@ -19,7 +19,7 @@ const Home = async () => {
         {/* pricing section  */}
         <PricingSection pricingPage={false} />
         {/* subscription section  */}
-        <CTA/>
+        <CTA />
       </section>
     </>
   );

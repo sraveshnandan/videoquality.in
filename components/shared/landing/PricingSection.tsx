@@ -78,7 +78,7 @@ const PricingSection = ({ pricingPage, cardData }: PricingProp) => {
 
                 <Link
                   href={`/Contact`}
-                  className="w-[80%] absolute bottom-2 left-6 bg-white hover:shadow-lg hover:shadow-pink-400 duration-500 transition-all  hover:bg-gradient-to-tr from-pink-500 via-indigo-500 hover:text-white rounded-md px-5 py-2 text-center text-lg font-semibold  "
+                  className="w-[80%] absolute bottom-2 left-6 bg-white hover:shadow-lg hover:shadow-pink-400 duration-500 transition-all  hover:bg-gradient-to-tr from-pink-500 via-indigo-500 hover:text-white rounded-md px-5 py-2 text-center text-lg font-semibold text-black  "
                 >
                   Contact us
                 </Link>
