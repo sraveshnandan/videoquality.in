@@ -20,7 +20,7 @@ const FeaturesSection = (props: Props) => {
       </span>
 
       {/* cards container  */}
-      <div className="grid md:grid-cols-2 grid-cols-1 xl:grid-cols-4 lg:grid-cols-3">
+      <div className="grid md:grid-cols-2 grid-cols-1 xl:grid-cols-3 lg:grid-cols-2">
         {FeatureCards.map((item: IFeatureCard) => (
           <div
             className="p-3 relative group shadow-lg flex flex-col gap-2 text-white min-h-[250px] bg-glass rounded-xl lg:w-[320px] xl:w-[360px] cursor-pointer  m-4 hover:shadow-xl transition-all duration-500 hover:scale-110  hover:shadow-pink-400"

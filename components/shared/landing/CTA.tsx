@@ -10,7 +10,7 @@ const CTA = () => {
     if (!user?.id) {
       return router.push("/sign-in");
     }
-    return router.push("/dashboard")
+    return router.push("/dashboard");
   };
   return (
     <div className="bg-glass rounded-xl mb-8  mx-4 lg:mx-0 ">
@@ -21,7 +21,7 @@ const CTA = () => {
             It&#x27;s today or never.
           </span>
         </h2>
-        <div className="lg:mt-0 lg:flex-shrink-0">
+        <div className="lg:mt-0 mt-4 lg:flex-shrink-0">
           <div className=" inline-flex rounded-md shadow">
             <button
               type="button"

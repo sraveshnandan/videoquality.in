@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, UploadCloud } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -23,7 +23,7 @@ const HeroSection = ({ userId }: Props) => {
         <span className="text-white lg:text-7xl md:text-6xl text-5xl text-wrap ">
           Elevate Your Video Content Instantly
         </span>
-        <span className="text-gray-500 mt-2 text-wrap lg:text-lg text-sm font-semibold">
+        <span className="text-white/60 mt-2 text-wrap lg:text-lg text-sm font-semibold">
           Upload your raw videos, describe your vision, and let our AI-driven
           platform deliver polished, professional-grade results. No editing
           skills required!
@@ -45,9 +45,21 @@ const HeroSection = ({ userId }: Props) => {
           </Link>
         </div>
       </div>
+      <div className="flex items-center gap-4 py-4  w-[96%] lg:w-[70%] my-4 flex-col justify-center min-h-[200px] rounded-md bg-glass">
+        <span className="xl:text-4xl md:text-3xl text-2xl font-medium text-white">
+          Upload Video to Continue.
+        </span>
+        <Link
+          href={userId ? "/dashboard" : "/sign-in"}
+          className="bg-white rounded-md p-2 flex flex-col items-center justify-center"
+        >
+          <UploadCloud size={55} />
+          <span>Upload Video</span>
+        </Link>
+      </div>
 
       {/* main  image  */}
-      <div className="p-4 rounded-xl my-8 bg-glass w-[80%] shadow-lg lg:h-[750px] md:h-[550px] h-[350px]">
+      <div className="p-4 rounded-xl my-8 bg-glass xl:w-[80%] w-[96%] mx-2 md:mx-0 shadow-lg lg:h-[750px] md:h-[550px] h-[350px]">
         <div className="relative w-[100%] rounded-lg overflow-hidden  h-full">
           <Image
             className="object-cover duration-800 transition-all hover:hue-rotate-60"

@@ -27,7 +27,7 @@ const HowItWorksSection = () => {
                 <div className="w-full md:w-1/3">
                   <button
                     type="button"
-                    className="py-2 px-4   bg-white hover:bg-pink-500 focus:ring-indigo-500 focus:ring-offset-indigo-200 hover:text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
+                    className="py-2 px-4 text-black   bg-white hover:bg-pink-500 focus:ring-indigo-500 focus:ring-offset-indigo-200 hover:text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
                   >
                     See more
                   </button>

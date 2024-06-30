@@ -16,7 +16,6 @@ type Props = {};
 
 const UpgradePage = (props: Props) => {
   const [loading, setloading] = useState(false);
-
   const { profile, setProfile } = useStore();
 
   // handling purchase
@@ -87,6 +86,7 @@ const UpgradePage = (props: Props) => {
         setProfile(u);
       })
       .catch((err: any) => toast.error(err.message));
+    toast.success("please reload the page , before purchasing any plan.");
   }, [setProfile]);
 
   return loading ? (

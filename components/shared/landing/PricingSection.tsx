@@ -2,9 +2,10 @@
 import { Button } from "@/components/ui/button";
 import { PricingCards } from "@/constants";
 import { IPricingCard } from "@/types";
+import { useUser } from "@clerk/nextjs";
 import { CircleArrowUp } from "lucide-react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 type PricingProp = {
   pricingPage?: boolean;
@@ -13,6 +14,9 @@ type PricingProp = {
 
 const PricingSection = ({ pricingPage, cardData }: PricingProp) => {
   const path = usePathname();
+  const router = useRouter();
+
+  const { isSignedIn } = useUser();
   return (
     <section className=" my-4  w-full flex flex-col gap-4 items-center p-2 rounded-md shadow-md">
       {/* section heading  */}
@@ -28,15 +32,21 @@ const PricingSection = ({ pricingPage, cardData }: PricingProp) => {
 
       {/* cards container  */}
       <div
-        className={`grid w-full  xl:grid-cols-3 lg:grid-cols-3  md:grid-cols-2 grid-cols-1 place-items-center`}
+        className={`grid w-full  xl:grid-cols-3 lg:grid-cols-2  md:grid-cols-2 grid-cols-1 place-items-center`}
       >
         {PricingCards.map((item, index) => (
           // Pricing Card \
           <div
             key={index}
+            onClick={() => {
+              if (isSignedIn) {
+                return router.push("/dashboard");
+              }
+              return router.push("/sign-in");
+            }}
             className={`bg-glass backdrop-blur-md ${
               item.amount === 49 && "border-2 relative border-pink-400"
-            } flex flex-col duration-500  transition-all hover:shadow-md hover:scale-110  hover:border-2 hover:border-pink-500 hover:shadow-violet-400 items-center  px-2 py-4 min-h-[450px] lg:w-[350px] md:w-[340px] w-[350px]  lg:my-4 m-2 rounded-md`}
+            } flex flex-col duration-500  transition-all hover:shadow-md hover:scale-110  hover:border-2 hover:border-pink-500 hover:shadow-violet-400 items-center  px-2 py-4 min-h-[450px] xl:w-[350px] md:w-[320px] w-[300px]  lg:my-4 m-2 rounded-md`}
           >
             {/* popular card  */}
             {item.amount === 49 && (

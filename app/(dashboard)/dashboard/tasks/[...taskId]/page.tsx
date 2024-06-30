@@ -115,9 +115,10 @@ const TaskDetailsPage = (props: Props) => {
 
             {task?.finalVideo && task?.finalVideo.length > 0 ? (
               <video
-                className="h-full w-full"
+                className="h-full max-h-[270px] w-full"
                 src={task?.finalVideo!}
                 autoPlay
+                muted
               ></video>
             ) : (
               <span className="text-white h-full justify-center flex flex-row items-center gap-2 text-xl">

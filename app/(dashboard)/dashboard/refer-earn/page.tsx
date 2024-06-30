@@ -52,7 +52,7 @@ const ReferEarnPage = () => {
       </span>
       <form
         onSubmit={handleReferCodeSubmit}
-        className="flex flex-row lg:gap-4 gap-2  rounded-md lg:w-[80%] w-full justify-center  lg:self-start self-center bg-glass shadow-lg p-2 items-center"
+        className="flex flex-row lg:gap-4 gap-2  rounded-md xl:w-[80%] w-full justify-center  lg:self-start self-center bg-glass shadow-lg p-2 items-center"
       >
         <input
           type="text"
@@ -72,11 +72,7 @@ const ReferEarnPage = () => {
 
       {/* refer an earn box  */}
 
-      <div className="bg-glass flex flex-col gap-4 lg:p-4 p-2 my-4 rounded-md shadow-lg lg:w-[80%] w-[100%]  lg:self-start self-center  ">
-        <span className="text-purple-500 border-b-2 border-b-purple-500 text-5xl">
-          Refer & Earn{" "}
-        </span>
-
+      <div className="bg-glass flex flex-col gap-4 lg:p-4 p-2 my-4 rounded-md shadow-lg xl:w-[80%] w-[100%]  lg:self-start self-center  ">
         <div className="bg-glass flex lg:flex-row flex-col  items-center rounded-md shadow-lg lg:p-3 p-1 ">
           <input
             type="text"
