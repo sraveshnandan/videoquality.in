@@ -45,7 +45,7 @@ const HeroSection = ({ userId }: Props) => {
           </Link>
         </div>
       </div>
-      <div className="flex items-center gap-4 py-4  w-[96%] lg:w-[70%] my-4 flex-col justify-center min-h-[200px] rounded-md bg-glass">
+      <div className="flex items-center text-black gap-4 py-4  w-[96%] lg:w-[70%] my-4 flex-col justify-center min-h-[200px] rounded-md bg-glass">
         <span className="xl:text-4xl md:text-3xl text-2xl font-medium text-white">
           Upload Video to Continue.
         </span>

@@ -38,12 +38,6 @@ const PricingSection = ({ pricingPage, cardData }: PricingProp) => {
           // Pricing Card \
           <div
             key={index}
-            onClick={() => {
-              if (isSignedIn) {
-                return router.push("/dashboard");
-              }
-              return router.push("/sign-in");
-            }}
             className={`bg-glass backdrop-blur-md ${
               item.amount === 49 && "border-2 relative border-pink-400"
             } flex flex-col duration-500  transition-all hover:shadow-md hover:scale-110  hover:border-2 hover:border-pink-500 hover:shadow-violet-400 items-center  px-2 py-4 min-h-[450px] xl:w-[350px] md:w-[320px] w-[300px]  lg:my-4 m-2 rounded-md`}
