@@ -20,9 +20,6 @@ const UpgradePage = (props: Props) => {
   const [loading, setloading] = useState(false);
   const { profile, setProfile } = useStore();
 
-  if (!isLoaded) {
-    return <Loader />;
-  }
   // handling purchase
 
   const handlePurchase = async (card: IPricingCard) => {
