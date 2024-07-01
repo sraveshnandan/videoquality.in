@@ -42,7 +42,7 @@ const Page = (props: Props) => {
   return (
     <div className="flex items-start mx-w-full scrh xl:p-4 overflow-y-auto overflow-x-hidden max-h-[calc(100vh-25px)] scroll-smooth sh flex-col gap-2 justify-start">
       {/* welcome section  */}
-      <div className="rounded-md xl:w-fit xl:p-4 p-2 fixed md:mb-4 xl:mb-2 lg:relative backdrop-blur-md bg-glass  shadow-lg shadow-black  w-full items-center flex gap-2">
+      <div className="rounded-md xl:w-[85%] xl:p-4 p-2 fixed md:mb-4 xl:mb-2 lg:relative backdrop-blur-md bg-glass  shadow-lg shadow-black  w-full items-center flex gap-2">
         <UserButton afterSignOutUrl="/" />
         <span className="text-white  font-medium">
           Welcome back{" "}
@@ -57,9 +57,9 @@ const Page = (props: Props) => {
           VideoTypes.map((item, index) => (
             <div
               key={index}
-              className={`flex ${
+              className={`flex relative ${
                 index === 0 && "border-pink-500"
-              } w-full border xl:p-4 flex-col gap-4 
+              } w-full border xl:p-4 my-2 rounded-xl flex-col gap-4 
               `}
             >
               {/* type section  */}

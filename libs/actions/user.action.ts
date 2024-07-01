@@ -69,16 +69,15 @@ const deleteUserAccount = async (id: string) => {
 
 const verifyCode = async (code: string) => {
   try {
-    const status = auth();
-    if (!status) {
+    const { userId } = auth();
+    if (!userId) {
       return "Unauthorised";
     }
-
     await connectToDatabase();
-    const loggedInUser = await User.findOne({ clerkId: status.userId });
+    const loggedInUser = await User.findOne({ clerkId: userId });
     const refrerUser = await User.findOne({ referCode: code });
 
-    if (loggedInUser.credit !== 0) {
+    if (loggedInUser?.credit !== 0) {
       return "You are not eligiable for this offer.";
     }
     if (loggedInUser.referCode === code) {

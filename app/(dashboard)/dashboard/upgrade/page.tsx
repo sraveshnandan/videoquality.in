@@ -8,6 +8,7 @@ import {
 } from "@/libs/actions/subscription.action";
 import { IPricingCard } from "@/types";
 import { useStore } from "@/zustand/MainStore";
+import { useUser } from "@clerk/nextjs";
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { toast } from "sonner";
@@ -15,13 +16,20 @@ import { toast } from "sonner";
 type Props = {};
 
 const UpgradePage = (props: Props) => {
+  const { user, isLoaded } = useUser();
   const [loading, setloading] = useState(false);
   const { profile, setProfile } = useStore();
 
+  if (!isLoaded) {
+    return <Loader />;
+  }
   // handling purchase
 
   const handlePurchase = async (card: IPricingCard) => {
     try {
+      if (!user) {
+        return toast.error("Unauthenticated.");
+      }
       setloading(true);
       // creating a order id
       const order = await createOrderId(card.amount!);

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { PricingCards } from "@/constants";
 import { IPricingCard } from "@/types";
 import { useUser } from "@clerk/nextjs";
-import { CircleArrowUp } from "lucide-react";
+import { ArrowBigLeft, ArrowUp, CircleArrowUp } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -37,10 +37,17 @@ const PricingSection = ({ pricingPage, cardData }: PricingProp) => {
         {PricingCards.map((item, index) => (
           // Pricing Card \
           <div
+            onClick={
+              path !== "/dashboard/upgrade"
+                ? () => {
+                    return router.push("/dashboard/upgrade");
+                  }
+                : () => {}
+            }
             key={index}
-            className={`bg-glass backdrop-blur-md ${
+            className={`bg-glass group backdrop-blur-md ${
               item.amount === 49 && "border-2 relative border-pink-400"
-            } flex flex-col duration-500  transition-all hover:shadow-md hover:scale-110  hover:border-2 hover:border-pink-500 hover:shadow-violet-400 items-center  px-2 py-4 min-h-[450px] xl:w-[350px] md:w-[320px] w-[300px]  lg:my-4 m-2 rounded-md`}
+            } flex flex-col duration-500  transition-all hover:shadow-md hover:scale-110  hover:border-2 hover:border-pink-500 hover:shadow-violet-400 items-center  px-2 py-4 min-h-[450px] xl:w-[350px] md:w-[320px] w-[340px] cursor-pointer  lg:my-4 m-2 rounded-md`}
           >
             {/* popular card  */}
             {item.amount === 49 && (

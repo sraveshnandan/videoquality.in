@@ -23,6 +23,7 @@ const ReferEarnPage = () => {
     const res = await verifyCode(referCode);
     setloading(false);
     toast.info(res);
+    console.log(res);
   };
 
   useEffect(() => {
