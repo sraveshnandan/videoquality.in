@@ -57,7 +57,7 @@ const Page = (props: Props) => {
           VideoTypes.map((item, index) => (
             <div
               key={index}
-              className={`flex relative ${
+              className={`flex  ${
                 index === 0 && "border-pink-500"
               } w-full border xl:p-4 my-2 rounded-xl flex-col gap-4 
               `}
