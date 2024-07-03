@@ -1,7 +1,7 @@
 "use client";
 
 import { LucideShieldClose, UploadCloud } from "lucide-react";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 import { CldUploadWidget } from "next-cloudinary";
 
@@ -13,6 +13,15 @@ type Props = {
 const Uploader = ({ rawVideoFile, setloading }: Props) => {
   const [file, setfile] = useState<File | null>(null);
   const [previewUrl, setpreviewUrl] = useState<string | null>(null);
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://widget.cloudinary.com/v2.0/global/all.js"; // Correct URL for Cloudinary widget
+    script.async = true;
+    script.onload = () => setScriptLoaded(true);
+    document.body.appendChild(script);
+  }, []);
 
   return (
     <div className="flex  bg-glass shadow-md shadow-black  xl:w-[50%] w-full rounded-md lg:h-[450px] h-fit items-center justify-center flex-col overflow-hidden p-4">
@@ -51,7 +60,7 @@ const Uploader = ({ rawVideoFile, setloading }: Props) => {
             onSuccess={(res) => {
               setloading(false);
               setpreviewUrl(res.info?.secure_url);
-              rawVideoFile(res.info.secure_url);
+              rawVideoFile(res.info?.secure_url);
             }}
             uploadPreset={process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!}
           >

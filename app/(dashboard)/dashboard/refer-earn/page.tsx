@@ -24,7 +24,6 @@ const ReferEarnPage = () => {
     setloading(false);
     toast.info(res);
   };
-
   useEffect(() => {
     getUserProfile().then((res) => {
       const u = JSON.parse(res);

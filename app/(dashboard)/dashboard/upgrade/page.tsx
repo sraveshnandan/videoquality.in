@@ -17,8 +17,9 @@ type Props = {};
 
 const UpgradePage = (props: Props) => {
   const { user, isLoaded } = useUser();
-  const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState<boolean>(false);
   const { profile, setProfile } = useStore();
+  const [scriptLoaded, setScriptLoaded] = useState<boolean>(false);
 
   // handling purchase
 
@@ -35,7 +36,7 @@ const UpgradePage = (props: Props) => {
 
       const options = {
         key: process.env.RAZORPAY_KEY_ID,
-        amount: card.amount! * 100,
+        amount: 100,
         currency: "INR",
         name: "VideoQuality",
         description: ` ${profile?.first_name} purchasing a ${card.name} plan.`,
@@ -85,6 +86,12 @@ const UpgradePage = (props: Props) => {
 
   // setting user profile
   useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.async = true;
+    script.onload = () => setScriptLoaded(true);
+    document.body.appendChild(script);
+
     getUserProfile()
       .then((res) => {
         const u = JSON.parse(res);
@@ -94,12 +101,8 @@ const UpgradePage = (props: Props) => {
     toast.success("please reload the page , before purchasing any plan.");
   }, [setProfile]);
 
-  return loading ? (
+  return !scriptLoaded ? (
     <>
-      <Script
-        id="razorpay-checkout-js"
-        src="https://checkout.razorpay.com/v1/checkout.js"
-      />
       <Loader />
     </>
   ) : (
